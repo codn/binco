@@ -25,6 +25,11 @@ module BootstrapOnRails
       super name, options
     end
 
+    def radio_button(method, tag_value, options = {})
+      options = add_class_to_options('radio', options)
+      super method, tag_value, options
+    end
+
     def submit(value = nil, options = {})
       options = add_class_to_options('btn btn-success', options)
       super value, options
@@ -32,23 +37,29 @@ module BootstrapOnRails
 
     def form_group(options = {}, &block)
       options = add_class_to_options('form-group', options)
-      form_grouping_tag options, &block
+      group_tag options, &block
+    end
+
+    def radio_group(options = {}, &block)
+      options = add_class_to_options('radio', options)
+      group_tag options, &block
     end
 
     def input_group(options = {}, &block)
       options = add_class_to_options('input-group', options)
-      form_grouping_tag options, &block
+      group_tag options, &block
     end
 
     private
-    #Add the specified class_name the the options hash
+
+      # Add the specified class_name the the options hash
       def add_class_to_options(class_name, options = {})
         options[:class] ||= ''
         options[:class] << " #{class_name}"
         options
       end
 
-      def form_grouping_tag(attributes = {}, &block)
+      def group_tag(attributes = {}, &block)
         @template.content_tag :div, attributes do
           yield
         end
