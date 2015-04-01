@@ -25,6 +25,11 @@ module BootstrapOnRails
       super name, options
     end
 
+    def datepicker(method, options = {})
+      options = add_data_to_options({ provide: 'datepicker' }, options)
+      text_field(method, options)
+    end
+
     def radio_button(method, tag_value, options = {})
       options = add_class_to_options('radio', options)
       super method, tag_value, options
@@ -56,6 +61,13 @@ module BootstrapOnRails
       def add_class_to_options(class_name, options = {})
         options[:class] ||= ''
         options[:class] << " #{class_name}"
+        options
+      end
+
+      # Add the specified data-attributes the the options hash
+      def add_data_to_options(data, options = {})
+        options[:data] ||= {}
+        options[:data].merge! data
         options
       end
 
