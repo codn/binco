@@ -35,6 +35,11 @@ module BootstrapOnRails
       super method, tag_value, options
     end
 
+    def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
+      options = add_class_to_options('checkbox', options)
+      super method, options, checked_value, unchecked_value
+    end
+
     def submit(value = nil, options = {})
       options = add_class_to_options('btn btn-success', options)
       super value, options
@@ -47,6 +52,11 @@ module BootstrapOnRails
 
     def radio_group(options = {}, &block)
       options = add_class_to_options('radio', options)
+      group_tag options, &block
+    end
+
+    def checkbox_group(options = {}, &block)
+      options = add_class_to_options('checkbox', options)
       group_tag options, &block
     end
 
