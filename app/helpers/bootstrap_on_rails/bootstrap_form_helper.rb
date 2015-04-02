@@ -7,6 +7,7 @@ module BootstrapOnRails
 
     def bootstrap_form_tag(url_for_options = {}, options = {}, &block)
       options[:acts_like_form_tag] = true
+      options[:url] = url_for_options
       bootstrap_form_for("", options, &block)
     end
   end
