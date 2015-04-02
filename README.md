@@ -9,13 +9,16 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 
 ## Installation
 
-To install simply include into Gemfile and run 
+To install simply include into Gemfile:
+```
+gem 'bootstrap-on-rails'
+```
+
+and run:
 
 ```
 bundle install
 ```
-To include bootstrap and all dependencies.
-* 
 
 In your application.scss add:
 ```
@@ -50,5 +53,20 @@ For customization of datepicker make sure to include your locale js and send it 
   
   <%= f.submit 'Great!' %>
 <% end %>
+```
+
+### Modals
+```
+<%= modal 'filter-modal' do %>
+  <%= modal_header 'One fine title'%>
+  <%= modal_body do %>
+    One fine body
+  <% end %>
+  <%= modal_footer do %>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+  <% end %> <!--  end modal_footer -->
+<% end %> <!-- end modal -->
+```
 
 This project rocks and uses MIT-LICENSE.
