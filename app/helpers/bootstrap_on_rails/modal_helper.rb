@@ -25,8 +25,10 @@ module BootstrapOnRails
       end
     end
 
-    def modal_body(&block)
-      content_tag :div, class: 'modal-body' do
+    def modal_body(options = {}, &block)
+      options[:class] ||= 'modal-body'
+      options[:class] << ' modal-body'
+      content_tag :div, options do
         yield
       end
     end
