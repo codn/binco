@@ -1,7 +1,7 @@
 module BootstrapOnRails
   module ModalHelper
     def modal(id, &block)
-      content_tag :div, class: 'modal fade', id: id do
+      content_tag :div, class: 'modal fade', tabindex: '-1', id: id do
         content_tag :div, class: 'modal-dialog' do
           content_tag :div, class: 'modal-content' do
             yield
