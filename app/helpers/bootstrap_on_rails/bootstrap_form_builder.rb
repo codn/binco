@@ -29,6 +29,11 @@ module BootstrapOnRails
       options = add_data_to_options({ provide: 'datepicker' }, options)
       text_field(method, options)
     end
+    
+    def text_area(method, options = {})
+      options = add_class_to_options('form-control', options)
+      text_field(method, options)
+    end
 
     def radio_button(method, tag_value, options = {})
       options = add_class_to_options('radio', options)
