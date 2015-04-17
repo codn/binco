@@ -5,6 +5,20 @@ module BootstrapOnRails
       super name, options
     end
 
+    def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
+      if block_given?
+        super(method, collection, value_method, text_method, options, html_options)
+      else
+        super method, collection, value_method, text_method, options, html_options do |b|
+          group_tag class: 'checkbox' do
+            b.label do
+              b.check_box + b.text
+            end
+          end
+        end
+      end
+    end
+
     def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
       html_options = add_class_to_options('form-control', options)
       super method, collection, value_method, text_method, options, html_options
@@ -29,7 +43,7 @@ module BootstrapOnRails
       options = add_data_to_options({ provide: 'datepicker' }, options)
       text_field(method, options)
     end
-    
+
     def text_area(method, options = {})
       options = add_class_to_options('form-control', options)
       super(method, options)
