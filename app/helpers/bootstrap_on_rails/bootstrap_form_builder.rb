@@ -19,9 +19,21 @@ module BootstrapOnRails
       end
     end
 
+    # Since select2 support multiple choices (checkboxes)
+    def collection_check_boxes2(method, collection, value_method, text_method, options = {}, html_options = {})
+      options ||= {}
+      options[:multiple] = 'multiple'
+      collection_select2 method, collection, value_method, text_method, options, html_options
+    end
+
     def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
       html_options = add_class_to_options('form-control', options)
       super method, collection, value_method, text_method, options, html_options
+    end
+
+    def collection_select2(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
+      options = add_class_to_options('select2-rails', options)
+      collection_select(method, collection, value_method, text_method, options, html_options)
     end
 
     def email_field(name, options = {})

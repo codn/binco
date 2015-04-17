@@ -4,6 +4,7 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 
 * [Bootstrap](https://github.com/twbs/bootstrap-sass)
 * [Bootstrap Datepicker](https://github.com/Nerian/bootstrap-datepicker-rails)
+* [Select2](https://github.com/argerim/select2-rails)
 * Bootstrap Helpers
 
 
@@ -34,23 +35,37 @@ In your application.js add:
 For customization of datepicker make sure to include your locale js and send it as data attribute when creating a datepicker.
 ```
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
+//= require select2_locale_es
 ```
 
 
 ## Usage
 
-```
+
+```erb
 <%= bootstrap_form_for(@object) do |f| %>
   <%= f.form_group do %>
     <%= f.label :product_id %>
     <%= f.collection_select :product_id, @products, :id, :name, class: 'special-select-class-if-needed' %>
   <% end %>
-  
+
   <%= f.form_group do %>
     <%= f.label :name %>
     <%= f.number_field :name %>
   <% end %>
-  
+
+  <!-- select2 support -->
+  <%= f.form_group do %>
+    <%= f.label :product %>
+    <%= f.collection_select2 :product_id, @products, :name, :id %>
+  <% end %>
+
+  <!-- select2 support for checkboxes -->
+  <%= f.form_group do %>
+    <%= f.label :products %>
+    <%= f.collection_check_boxes2 :product_id, @products, :name, :id %>
+  <% end %>
+
   <%= f.submit 'Great!' %>
 <% end %>
 ```
