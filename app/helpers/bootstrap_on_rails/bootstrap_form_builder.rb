@@ -7,7 +7,7 @@ module BootstrapOnRails
 
     def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
       if block_given?
-        super(method, collection, value_method, text_method, options, html_options)
+        super(method, collection, value_method, text_method, options, html_options, &block)
       else
         super method, collection, value_method, text_method, options, html_options do |b|
           group_tag class: 'checkbox' do
