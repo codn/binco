@@ -1,7 +1,11 @@
 <ol class="breadcrumb">
   <% breadcrumb.each do |route| %>
     <li class="<%= 'active' if breadcrumb.last == route %>">
-      <%= link_to route[:title], route[:url] %>
+      <% if route[:url] %>
+        <%= link_to route[:title], route[:url] %>
+      <% else %>
+        <%= route[:title] %>
+      <% end %>
     </li>
   <% end %>
 </ol>

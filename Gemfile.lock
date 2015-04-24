@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap-on-rails (0.0.1)
+    binco (0.0.1)
       bootstrap-datepicker-rails
       railties (>= 3.2, < 5.0)
       select2-rails
@@ -83,5 +83,5 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  bootstrap-on-rails!
+  binco!
   sass-rails
