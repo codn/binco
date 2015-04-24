@@ -1,4 +1,4 @@
-# BootstrapOnRails
+# Binco
 
 This is a wrapper for adding bootstrap to a project. By includinig this gem you'll add:
 
@@ -12,7 +12,7 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 
 To install simply include into Gemfile:
 ```
-gem 'bootstrap-on-rails'
+gem 'binco'
 ```
 
 and run:
@@ -23,12 +23,12 @@ bundle install
 
 In your application.scss add:
 ```
-@include "bootstrap-on-rails"
+@include "binco"
 ```
 
 In your application.js add:
 ```
-//= require bootstrap-on-rails
+//= require binco
 ```
 
 #### Optional
@@ -71,7 +71,7 @@ For customization of datepicker make sure to include your locale js and send it 
 ```
 
 ### Modals
-```
+```erb
 <%= modal 'filter-modal' do %>
   <%= modal_header 'One fine title'%>
   <%= modal_body do %>
@@ -83,5 +83,18 @@ For customization of datepicker make sure to include your locale js and send it 
   <% end %> <!--  end modal_footer -->
 <% end %> <!-- end modal -->
 ```
+
+### Breadcrumbs
+In your layout render the partial wherever your like
+```erb
+<%= render 'binco/breadcrumb' %>
+```
+In your views, add an element to breadcrumb with:
+```erb
+<%= breadcrumb_add(title: 'new', url: pages_new_path) %>
+```
+Notice that first in first out. So be careful with the order.
+
+
 
 This project rocks and uses MIT-LICENSE.

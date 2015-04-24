@@ -1,4 +1,4 @@
-module BootstrapOnRails
+module Binco
   module ButtonHelper
     def button(title, options = {})
       options[:type] ||= :default

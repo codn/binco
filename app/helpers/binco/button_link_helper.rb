@@ -1,4 +1,4 @@
-module BootstrapOnRails
+module Binco
   module ButtonLinkHelper
     def button_link_to(name = nil, options = nil, html_options = {}, &block)
       html_options[:type] ||= :default

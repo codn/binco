@@ -1,4 +1,4 @@
-module BootstrapOnRails
+module Binco
   module ModalHelper
     def modal(id, &block)
       content_tag :div, class: 'modal fade', tabindex: '-1', id: id do
