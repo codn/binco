@@ -1,7 +1,7 @@
 require 'bootstrap-datepicker-rails'
 require 'select2-rails'
 
-module BootstrapOnRails
+module Binco
   class Engine < ::Rails::Engine
   end
 end

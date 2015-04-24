@@ -2,14 +2,14 @@
 #
 # # Maintain your gem's version:
 # require "bootstrap_on_rails/version"
-require File.expand_path('../lib/bootstrap-on-rails/version', __FILE__)
+require File.expand_path('../lib/binco/version', __FILE__)
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "bootstrap-on-rails"
-  s.version     = BootstrapOnRails::VERSION
+  s.name        = "binco"
+  s.version     = Binco::VERSION
   s.authors     = ["Victor Camacho"]
   s.email       = ["victor@codn.mx"]
-  s.homepage    = "http://github.com/vicocamacho/bootstrap-on-rails"
+  s.homepage    = "http://github.com/codn/binco"
   s.summary     = "Bootstrap Sass for use in Ruby on Rails applications"
   s.description = "This Gems wraps the bootstrap-sass gem and adds a collection of helpers to help you integrate bootstrap into your Rails app."
   s.license     = "MIT"
