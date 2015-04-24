@@ -95,6 +95,15 @@ In your views, add an element to breadcrumb with:
 ```
 Notice that first in first out. So be careful with the order.
 
+Your can configure your placeholder and default url for the breadcrumb in an initializer:
 
+```rb
+Binco.configure do |binco|
+  binco.breadcrumb_before = { title: 'You are here' }
+  binco.breadcrumb_default = [
+    { title: 'Index', url: '/' }
+  ]
+end
+```
 
 This project rocks and uses MIT-LICENSE.
