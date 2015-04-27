@@ -4,6 +4,11 @@ module Binco
       options = add_class_to_options('form-control', options)
       super name, options
     end
+    
+    def telephone_field(name, options = {})
+      options = add_class_to_options('form-control', options)
+      super name, options
+    end
 
     def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
       if block_given?
