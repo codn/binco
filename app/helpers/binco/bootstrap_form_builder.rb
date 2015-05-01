@@ -4,8 +4,13 @@ module Binco
       options = add_class_to_options('form-control', options)
       super name, options
     end
-    
+
     def telephone_field(name, options = {})
+      options = add_class_to_options('form-control', options)
+      super name, options
+    end
+
+    def select(name, options = {})
       options = add_class_to_options('form-control', options)
       super name, options
     end
