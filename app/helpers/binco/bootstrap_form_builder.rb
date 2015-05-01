@@ -10,9 +10,9 @@ module Binco
       super name, options
     end
 
-    def select(name, options = {})
-      options = add_class_to_options('form-control', options)
-      super name, options
+    def select(method, choices = nil, options = {}, html_options = {}, &block)
+      html_options = add_class_to_options('form-control', html_options)
+      super method, choices, options, html_options, &block
     end
 
     def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
