@@ -20,7 +20,11 @@ and run:
 ```
 bundle install
 ```
+### Automatic
+Run `rails g binco:install`
+This creates the `application.scss` with binco (and bootstrap) included, your `_bootstrap-overrides.scss` file and insert assets into javascript manifest.
 
+### Manual Installation
 In your application.scss add:
 ```
 @include "binco"

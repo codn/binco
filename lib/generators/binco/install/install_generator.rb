@@ -16,5 +16,12 @@ module Binco
       copy_file '_bootstrap-variables.scss', 'app/assets/stylesheets/_bootstrap-variables.scss'
     end
 
+    def add_javascripts
+      inject_into_file 'app/assets/javascripts/application.js', after: '//= require turbolinks' do
+        "\n//= require binco\n" +
+        "//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js\n" +
+        "//= require select2_locale_es"
+      end
+    end
   end
 end
