@@ -13,7 +13,7 @@ module Binco
     end
 
     def create_overrides
-      copy_file '_bootstrap-variables.scss', 'app/assets/stylesheets/_bootstrap-variables.scss'
+      copy_file '_bootstrap-overrides.scss', 'app/assets/stylesheets/_bootstrap-overrides.scss'
     end
 
     def add_javascripts
