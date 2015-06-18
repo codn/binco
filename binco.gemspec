@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "bootstrap-datepicker-rails"
   s.add_dependency "select2-rails"
+  s.add_dependency "will_paginate"
 
   s.add_development_dependency "activesupport"
   s.add_development_dependency "sass-rails"
