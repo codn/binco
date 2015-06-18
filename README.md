@@ -5,6 +5,7 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 * [Bootstrap](https://github.com/twbs/bootstrap-sass)
 * [Bootstrap Datepicker](https://github.com/Nerian/bootstrap-datepicker-rails)
 * [Select2](https://github.com/argerim/select2-rails)
+* [Will paginate](https://github.com/mislav/will_paginate)
 * Bootstrap Helpers
 
 
@@ -45,7 +46,6 @@ For customization of datepicker make sure to include your locale js and send it 
 
 
 ## Usage
-
 
 ```erb
 <%= bootstrap_form_for(@object) do |f| %>
@@ -109,6 +109,17 @@ Binco.configure do |binco|
     { title: 'Index', url: '/' }
   ]
 end
+```
+
+### Pagination
+```ruby
+# controller
+@posts = Post.all.page(params[:page])
+```
+
+```erb
+<!-- View -->
+<%= render 'binco/pagination', collection: @posts %>
 ```
 
 This project rocks and uses MIT-LICENSE.
