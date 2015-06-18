@@ -63,7 +63,7 @@ module Binco
     end
 
     def html_container(html)
-      tag(:ul, html, class: 'pagination pagination-xs nomargin pagination-custom')
+      tag(:ul, html, class: 'pagination pagination-xs')
     end
 
     # Returns URL params for +page_link_or_span+, taking the current GET params
