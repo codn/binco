@@ -7,4 +7,9 @@
 
 .field_with_errors {
   @extend .has-error;
+  
+  input,
+  textarea {
+    border: 1px;
+  }
 }
