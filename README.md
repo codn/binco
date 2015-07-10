@@ -6,8 +6,8 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 * [Bootstrap Datepicker](https://github.com/Nerian/bootstrap-datepicker-rails)
 * [Select2](https://github.com/argerim/select2-rails)
 * [Will paginate](https://github.com/mislav/will_paginate)
+* Links with `data: { confirm: 'Sure?' }` opens in Bootstrap Modal by default.
 * Bootstrap Helpers
-
 
 ## Installation
 
