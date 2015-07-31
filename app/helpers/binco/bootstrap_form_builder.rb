@@ -1,7 +1,7 @@
 module Binco
   class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     alias_method :collection_select_original, :collection_select
-    
+
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
       super name, options
@@ -39,12 +39,12 @@ module Binco
     end
 
     def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-      html_options = add_class_to_options('form-control', options)
+      html_options = add_class_to_options('form-control', html_options)
       super method, collection, value_method, text_method, options, html_options
     end
 
     def collection_select2(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      options = add_class_to_options('select2-rails', options)
+      html_options = add_class_to_options('select2-rails', html_options)
       collection_select(method, collection, value_method, text_method, options, html_options)
     end
 
