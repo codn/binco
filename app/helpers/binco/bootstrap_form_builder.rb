@@ -1,5 +1,7 @@
 module Binco
   class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
+    alias_method :collection_select_original, :collection_select
+    
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
       super name, options
