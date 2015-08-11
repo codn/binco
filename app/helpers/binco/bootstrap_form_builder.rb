@@ -34,8 +34,8 @@ module Binco
 
     # Since select2 support multiple choices (checkboxes)
     def collection_check_boxes2(method, collection, value_method, text_method, options = {}, html_options = {})
-      options ||= {}
-      options[:multiple] = 'multiple'
+      html_options ||= {}
+      html_options[:multiple] = 'multiple'
       collection_select2 method, collection, value_method, text_method, options, html_options
     end
 
