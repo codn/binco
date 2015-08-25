@@ -1,10 +1,10 @@
 PATH
   remote: .
   specs:
-    binco (0.0.1)
-      bootstrap-datepicker-rails
+    binco (0.0.3)
       railties (>= 3.2, < 5.0)
       select2-rails
+      will_paginate
 
 GEM
   remote: https://rubygems.org/
@@ -28,8 +28,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    bootstrap-datepicker-rails (1.4.0)
-      railties (>= 3.0)
     builder (3.2.2)
     erubis (2.7.0)
     i18n (0.7.0)
@@ -77,6 +75,7 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby

@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "railties", ">= 3.2", "< 5.0"
 
-  s.add_dependency "bootstrap-datepicker-rails"
   s.add_dependency "select2-rails"
   s.add_dependency "will_paginate"
 

@@ -1,4 +1,3 @@
-require 'bootstrap-datepicker-rails'
 require 'select2-rails'
 require 'will_paginate'
 
