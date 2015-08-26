@@ -80,7 +80,6 @@ module Binco
     end
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
-      options = add_class_to_options('checkbox', options)
       super method, options, checked_value, unchecked_value
     end
 
