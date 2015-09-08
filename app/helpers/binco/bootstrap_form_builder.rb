@@ -14,7 +14,7 @@ module Binco
     end
 
     def select(method, choices = nil, options = {}, html_options = {}, &block)
-      html_options = add_class_to_options('form-control', html_options)
+      html_options = add_class_to_options('c-select', html_options)
       super method, choices, options, html_options, &block
     end
 
@@ -40,13 +40,13 @@ module Binco
     end
 
     def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-      html_options = add_class_to_options('form-control', html_options)
+      html_options = add_class_to_options('c-select', html_options)
       super method, collection, value_method, text_method, options, html_options
     end
 
     def collection_select2(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
       html_options = add_class_to_options('select2-rails', html_options)
-      collection_select(method, collection, value_method, text_method, options, html_options)
+      collection_select_original(method, collection, value_method, text_method, options, html_options)
     end
 
     def email_field(name, options = {})

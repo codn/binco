@@ -6,7 +6,15 @@
 .field_with_errors {
   @extend .has-error;
 
-  .form-control {
-    border: 1px;
+  input {
+    @extend .form-control-error;
   }
+}
+
+select.c-select {
+  width: 100%;
+}
+
+.select2-container {
+  width: 100%;
 }
