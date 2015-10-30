@@ -75,7 +75,6 @@ module Binco
     end
 
     def radio_button(method, tag_value, options = {})
-      options = add_class_to_options('radio', options)
       super method, tag_value, options
     end
 
