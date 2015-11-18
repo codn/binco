@@ -7,7 +7,7 @@
   @extend .has-error;
 
   input {
-    @extend .form-control-error;
+    @extend .form-control-danger;
   }
 }
 
