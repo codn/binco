@@ -82,6 +82,11 @@ module Binco
       super method, options, checked_value, unchecked_value
     end
 
+    def file_field(method, options = {})
+      options = add_class_to_options('form-control-file', options)
+      super method, options
+    end
+
     def submit(value = nil, options = {})
       options = add_class_to_options('btn btn-success', options)
       super value, options
