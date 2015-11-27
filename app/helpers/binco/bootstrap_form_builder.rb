@@ -89,6 +89,7 @@ module Binco
 
     def submit(value = nil, options = {})
       options = add_class_to_options('btn btn-success', options)
+      add_data_to_options({ disable_with: 'Enviando' }, options)
       super value, options
     end
 

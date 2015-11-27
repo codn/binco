@@ -96,7 +96,7 @@ In your layout render the partial wherever your like
 ```
 In your views, add an element to breadcrumb with:
 ```erb
-<%= breadcrumb_add(title: 'new', url: pages_new_path) %>
+<% breadcrumb_add(title: 'new', url: pages_new_path) %>
 ```
 Notice that first in first out. So be careful with the order.
 
