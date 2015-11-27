@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     binco (0.0.3)
-      autoprefixer-rails
+      bootstrap-datepicker-rails
       railties (>= 3.2, < 5.0)
       select2-rails
       will_paginate
@@ -29,12 +29,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    autoprefixer-rails (5.2.1.2)
-      execjs
-      json
+    bootstrap-datepicker-rails (1.5.0)
+      railties (>= 3.0)
     builder (3.2.2)
     erubis (2.7.0)
-    execjs (2.6.0)
     i18n (0.7.0)
     json (1.8.3)
     loofah (2.0.3)
@@ -67,7 +65,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
-    select2-rails (3.5.9.3)
+    select2-rails (4.0.0)
       thor (~> 0.14)
     sprockets (3.3.3)
       rack (~> 1.0)

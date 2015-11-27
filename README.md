@@ -40,10 +40,13 @@ In your application.js add:
 #### Optional
 For customization of datepicker make sure to include your locale js and send it as data attribute when creating a datepicker.
 ```
+# app/assets/javascripts/application.js
+
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require select2_locale_es
-```
 
+$.fn.datepicker.defaults.language = 'es'
+```
 
 ## Usage
 
