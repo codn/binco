@@ -13,7 +13,7 @@
   }
 }
 
-.field_with_errors + .field_with_errors {
+.form-group > .field_with_errors:last-child {
   display: block;
 }
 
