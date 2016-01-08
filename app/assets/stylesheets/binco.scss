@@ -13,6 +13,10 @@
   }
 }
 
+.field_with_errors + .field_with_errors {
+  display: block;
+}
+
 select.c-select {
   width: 100%;
 }
