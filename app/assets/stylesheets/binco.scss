@@ -5,7 +5,7 @@
 @import "bootstrap-datepicker3";
 
 .field_with_errors {
-  @extend .has-error;
+  @extend .has-danger;
   display: inline-block;
 
   input {
