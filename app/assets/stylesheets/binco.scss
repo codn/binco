@@ -13,6 +13,10 @@
   }
 }
 
+.form-group > .field_with_errors {
+  display: inline;
+}
+
 .form-group > .field_with_errors:last-child {
   display: block;
 }
@@ -23,4 +27,8 @@ select.c-select {
 
 .select2-container {
   width: 100% !important;
+}
+
+.field_with_errors .select2-container .select2-selection--single {
+  border-color: $brand-danger;
 }
