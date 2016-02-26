@@ -19,7 +19,7 @@ module Binco
     end
     
     def select2(method, choices = nil, options = {}, html_options = {}, &block)
-      html_options = add_class_to_options('custom-select', html_options)
+      html_options = add_class_to_options('select2-rails', html_options)
       select_original method, choices, options, html_options, &block
     end
 
