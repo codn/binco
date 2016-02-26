@@ -17,6 +17,11 @@ module Binco
       html_options = add_class_to_options('custom-select', html_options)
       super method, choices, options, html_options, &block
     end
+    
+    def select2(method, choices = nil, options = {}, html_options = {}, &block)
+      html_options = add_class_to_options('custom-select', html_options)
+      select_original method, choices, options, html_options, &block
+    end
 
     def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
       if block_given?
