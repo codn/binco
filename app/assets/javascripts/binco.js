@@ -1,3 +1,4 @@
+//= require binco_namespace
 //= require tether.min
 //= require bootstrap-sprockets
 //= require select2
