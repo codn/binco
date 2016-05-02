@@ -117,6 +117,11 @@ module Binco
       options = add_class_to_options('input-group', options)
       group_tag options, &block
     end
+    
+    def addon(icon, options = {})
+      options = add_class_to_options('input-group-addon', options)
+      @template.content_tag(:span, icon, options)
+    end
 
     private
 
