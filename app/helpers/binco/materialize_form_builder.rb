@@ -1,20 +1,17 @@
 module Binco
-  class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
+  class MaterializeFormBuilder < ActionView::Helpers::FormBuilder
     alias_method :collection_select_original, :collection_select
     alias_method :select_original, :select
 
     def text_field(name, options = {})
-      options = add_class_to_options('form-control', options)
       super name, options
     end
 
     def telephone_field(name, options = {})
-      options = add_class_to_options('form-control', options)
       super name, options
     end
 
     def select(method, choices = nil, options = {}, html_options = {}, &block)
-      html_options = add_class_to_options('form-control', html_options)
       super method, choices, options, html_options, &block
     end
 
@@ -40,7 +37,6 @@ module Binco
     end
 
     def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-      html_options = add_class_to_options('form-control', html_options)
       super method, collection, value_method, text_method, options, html_options
     end
 
@@ -50,17 +46,14 @@ module Binco
     end
 
     def email_field(name, options = {})
-      options = add_class_to_options('form-control', options)
       super name, options
     end
 
     def number_field(name, options = {})
-      options = add_class_to_options('form-control', options)
       super name, options
     end
 
     def password_field(name, options = {})
-      options = add_class_to_options('form-control', options)
       super name, options
     end
 
@@ -70,7 +63,7 @@ module Binco
     end
 
     def text_area(method, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options('materialize-textarea', options)
       super(method, options)
     end
 
@@ -85,13 +78,12 @@ module Binco
     end
 
     def submit(value = nil, options = {})
-      options = add_class_to_options('btn btn-success', options)
-      add_data_to_options({ disable_with: 'Enviando' }, options)
+      options = add_class_to_options('btn', options)
       super value, options
     end
 
     def form_group(options = {}, &block)
-      options = add_class_to_options('form-group', options)
+      options = add_class_to_options('input-field', options)
       group_tag options, &block
     end
 
