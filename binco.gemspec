@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_paths = ['lib']
 
-  s.add_dependency "railties", ">= 4.0.0", "< 5.1.x"
+  s.add_dependency "railties", ">= 4.0.0", "< 5.1"
 
   s.add_dependency "bootstrap-datepicker-rails"
   s.add_dependency "select2-rails"
