@@ -2,6 +2,7 @@ module Binco
   class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     alias_method :collection_select_original, :collection_select
     alias_method :select_original, :select
+    alias_method :check_group, :check_box_group
 
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
@@ -17,7 +18,7 @@ module Binco
       html_options = add_class_to_options('custom-select', html_options)
       super method, choices, options, html_options, &block
     end
-    
+
     def select2(method, choices = nil, options = {}, html_options = {}, &block)
       html_options = add_class_to_options('select2-rails', html_options)
       select_original method, choices, options, html_options, &block
@@ -84,6 +85,7 @@ module Binco
     end
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
+      options = add_class_to_options('form-check-input', options)
       super method, options, checked_value, unchecked_value
     end
 
@@ -108,16 +110,23 @@ module Binco
       group_tag options, &block
     end
 
-    def checkbox_group(options = {}, &block)
-      options = add_class_to_options('checkbox', options)
+    def form_check(options = {}, &block)
+      options = add_class_to_options('form-check', options)
       group_tag options, &block
+    end
+
+    def check_label(options = {}, &block)
+      options = add_class_to_options('form-check', options)
+      @template.content_tag :label, options do
+        yield
+      end
     end
 
     def input_group(options = {}, &block)
       options = add_class_to_options('input-group', options)
       group_tag options, &block
     end
-    
+
     def addon(icon, options = {})
       options = add_class_to_options('input-group-addon', options)
       @template.content_tag(:span, icon, options)
