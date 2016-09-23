@@ -3,7 +3,7 @@ module Binco
     alias_method :collection_select_original, :collection_select
     alias_method :select_original, :select
     alias_method :phone_field, :telephone_field
-    alias_method :check_group, :check_box_group
+    alias_method :form_check, :check_box_group
 
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
