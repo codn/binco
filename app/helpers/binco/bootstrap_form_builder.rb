@@ -2,6 +2,7 @@ module Binco
   class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     alias_method :collection_select_original, :collection_select
     alias_method :select_original, :select
+    alias_method :phone_field, :telephone_field
 
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
@@ -17,7 +18,7 @@ module Binco
       html_options = add_class_to_options('custom-select', html_options)
       super method, choices, options, html_options, &block
     end
-    
+
     def select2(method, choices = nil, options = {}, html_options = {}, &block)
       html_options = add_class_to_options('select2-rails', html_options)
       select_original method, choices, options, html_options, &block
@@ -117,7 +118,7 @@ module Binco
       options = add_class_to_options('input-group', options)
       group_tag options, &block
     end
-    
+
     def addon(icon, options = {})
       options = add_class_to_options('input-group-addon', options)
       @template.content_tag(:span, icon, options)
