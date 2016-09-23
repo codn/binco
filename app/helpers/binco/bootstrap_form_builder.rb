@@ -117,7 +117,7 @@ module Binco
     alias_method :check_box_group, :form_check
 
     def check_label(options = {}, &block)
-      options = add_class_to_options('form-check', options)
+      options = add_class_to_options('form-check-label', options)
       @template.content_tag :label, options do
         yield
       end
