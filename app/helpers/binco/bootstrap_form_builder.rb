@@ -3,6 +3,7 @@ module Binco
     alias_method :collection_select_original, :collection_select
     alias_method :select_original, :select
     alias_method :phone_field, :telephone_field
+    alias_method :check_group, :check_box_group
 
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
@@ -85,6 +86,7 @@ module Binco
     end
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
+      options = add_class_to_options('form-check-input', options)
       super method, options, checked_value, unchecked_value
     end
 
@@ -109,9 +111,16 @@ module Binco
       group_tag options, &block
     end
 
-    def checkbox_group(options = {}, &block)
-      options = add_class_to_options('checkbox', options)
+    def form_check(options = {}, &block)
+      options = add_class_to_options('form-check', options)
       group_tag options, &block
+    end
+
+    def check_label(options = {}, &block)
+      options = add_class_to_options('form-check', options)
+      @template.content_tag :label, options do
+        yield
+      end
     end
 
     def input_group(options = {}, &block)
