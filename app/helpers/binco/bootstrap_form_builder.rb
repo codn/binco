@@ -89,6 +89,11 @@ module Binco
       super method, options, checked_value, unchecked_value
     end
 
+    def custom_check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
+      options = add_class_to_options('custom-control-input', options)
+      super method, options, checked_value, unchecked_value
+    end
+
     def file_field(method, options = {})
       options = add_class_to_options('form-control-file', options)
       super method, options
@@ -117,11 +122,12 @@ module Binco
     alias_method :check_box_group, :form_check
 
     def check_label(options = {}, &block)
-      options = add_class_to_options('form-check-label', options)
+      options = add_class_to_options('custom-control custom-checkbox', options)
       @template.content_tag :label, options do
         yield
       end
     end
+    alias_method :check_box_label, :check_label
 
     def input_group(options = {}, &block)
       options = add_class_to_options('input-group', options)
