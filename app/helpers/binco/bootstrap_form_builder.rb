@@ -1,6 +1,7 @@
 module Binco
   class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     alias_method :collection_select_original, :collection_select
+    alias_method :check_box_original, :check_box
     alias_method :select_original, :select
 
     def text_field(name, options = {})
@@ -90,7 +91,7 @@ module Binco
 
     def custom_check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
       options = add_class_to_options('custom-control-input', options)
-      super method, options, checked_value, unchecked_value
+      check_box_original(method, options, checked_value, unchecked_value)
     end
 
     def file_field(method, options = {})
