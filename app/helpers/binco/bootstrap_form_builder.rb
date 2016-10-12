@@ -92,7 +92,12 @@ module Binco
 
     def custom_check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
       options = add_class_to_options('custom-control-input', options)
-      check_box_original(method, options, checked_value, unchecked_value)
+      base_proc = ActionView::Base::field_error_proc
+      ActionView::Base::field_error_proc = Proc.new { |html_tag, instance| html_tag }
+      html = check_box_original(method, options, checked_value, unchecked_value)
+      ActionView::Base::field_error_proc = base_proc
+
+      return html
     end
 
     def file_field(method, options = {})
@@ -122,11 +127,9 @@ module Binco
     end
     alias_method :check_box_group, :form_check
 
-    def check_label(options = {}, &block)
+    def check_label(method, options = {}, &block)
       options = add_class_to_options('custom-control custom-checkbox', options)
-      @template.content_tag :label, options do
-        yield
-      end
+      @template.label(@object_name, method, nil, objectify_options(options), &block)
     end
     alias_method :check_box_label, :check_label
 
