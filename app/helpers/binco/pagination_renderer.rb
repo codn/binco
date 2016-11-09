@@ -1,7 +1,7 @@
 require 'will_paginate/view_helpers/action_view'
 
 module Binco
-  class PaginationRenderer < LinkRenderer
+  class PaginationRenderer < WillPaginate::ActionView::LinkRenderer
     ELLIPSIS = '&hellip;'
 
     def to_html
