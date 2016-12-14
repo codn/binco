@@ -4,6 +4,20 @@ module Binco
     alias_method :check_box_original, :check_box
     alias_method :select_original, :select
 
+    def initialize(object_name, object, template, options)
+      ActionView::Base::field_error_proc = Proc.new do |html_tag, instance|
+        if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
+          error_messages = instance.error_message.collect{ |error| "<div class=\"form-control-feedback\">#{error}</div>" }.join
+
+          "<div class=\"field_with_errors\">#{html_tag} #{error_messages}</div>".html_safe
+        else
+          "<div class=\"field_with_errors\">#{html_tag}</div>".html_safe
+        end
+      end
+
+      super(object_name, object, template, options)
+    end
+
     def text_field(name, options = {})
       options = add_class_to_options('form-control', options)
       super name, options
