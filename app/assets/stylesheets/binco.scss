@@ -31,3 +31,7 @@ select.custom-select {
 .field_with_errors .select2-container .select2-selection--single {
   border-color: $brand-danger;
 }
+
+.field_with_errors .custom-select {
+  border-color: $brand-danger;
+}
