@@ -3,6 +3,7 @@ module Binco
     alias_method :collection_select_original, :collection_select
     alias_method :check_box_original, :check_box
     alias_method :select_original, :select
+    alias_method :submit_original, :submit
 
     def initialize(object_name, object, template, options)
       ActionView::Base::field_error_proc = Proc.new do |html_tag, instance|
