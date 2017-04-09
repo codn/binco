@@ -143,7 +143,7 @@ module Binco
     alias_method :check_box_group, :form_check
 
     def check_label(method, options = {}, &block)
-      options = add_class_to_options('custom-control custom-checkbox', options)
+      options = add_class_to_options('form-check-label', options)
       @template.label(@object_name, method, nil, objectify_options(options), &block)
     end
     alias_method :check_box_label, :check_label
