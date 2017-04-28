@@ -5,6 +5,11 @@ module Binco
     alias_method :select_original, :select
     alias_method :submit_original, :submit
 
+    CHECK_BOX_GROUP_CLASS = 'form-check'
+    CHECK_BOX_LABEL_CLASS = 'form-check-label'
+    FORM_ELEMENT_CLASS = 'form-control'
+    CHECK_BOX_INPUT_CLASS = 'form-check-input'
+
     def initialize(object_name, object, template, options)
       ActionView::Base::field_error_proc = Proc.new do |html_tag, instance|
         if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
@@ -20,12 +25,12 @@ module Binco
     end
 
     def text_field(name, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super name, options
     end
 
     def telephone_field(name, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super name, options
     end
 
@@ -44,9 +49,9 @@ module Binco
         super(method, collection, value_method, text_method, options, html_options, &block)
       else
         super method, collection, value_method, text_method, options, html_options do |b|
-          group_tag class: 'checkbox' do
-            b.label do
-              b.check_box + b.text
+          group_tag class: CHECK_BOX_GROUP_CLASS do
+            b.label class: CHECK_BOX_LABEL_CLASS do
+              b.check_box(class: CHECK_BOX_INPUT_CLASS) + " " + b.text
             end
           end
         end
@@ -71,17 +76,17 @@ module Binco
     end
 
     def email_field(name, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super name, options
     end
 
     def number_field(name, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super name, options
     end
 
     def password_field(name, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super name, options
     end
 
@@ -91,7 +96,7 @@ module Binco
     end
 
     def text_area(method, options = {})
-      options = add_class_to_options('form-control', options)
+      options = add_class_to_options(FORM_ELEMENT_CLASS, options)
       super(method, options)
     end
 
@@ -100,7 +105,7 @@ module Binco
     end
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
-      options = add_class_to_options('form-check-input', options)
+      options = add_class_to_options(CHECK_BOX_INPUT_CLASS, options)
       super method, options, checked_value, unchecked_value
     end
 
@@ -136,13 +141,13 @@ module Binco
     end
 
     def form_check(options = {}, &block)
-      options = add_class_to_options('form-check', options)
+      options = add_class_to_options(CHECK_BOX_GROUP_CLASS, options)
       group_tag options, &block
     end
     alias_method :check_box_group, :form_check
 
     def check_label(method, options = {}, &block)
-      options = add_class_to_options('form-check-label', options)
+      options = add_class_to_options(CHECK_BOX_LABEL_CLASS, options)
       @template.label(@object_name, method, nil, objectify_options(options), &block)
     end
     alias_method :check_box_label, :check_label
