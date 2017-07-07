@@ -18,11 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_paths = ['lib']
 
-<<<<<<< HEAD
   s.add_dependency "railties", ">= 3.2", "< 5.2.x"
-=======
-  s.add_dependency "railties", ">= 4.0.0", "< 5.2"
->>>>>>> aeeac9d37ef2c35cf6cf99f7d81793b2c49286f6
 
   s.add_dependency "select2-rails"
   s.add_dependency "will_paginate"
