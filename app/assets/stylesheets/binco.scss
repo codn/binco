@@ -5,10 +5,10 @@
 @import "datepicker";
 
 .field_with_errors {
-  @extend .has-danger;
+  @extend .has-error;
 
-  input, select {
-    @extend .form-control-danger;
+  .form-control {
+    border-width: 1px;
   }
 }
 
