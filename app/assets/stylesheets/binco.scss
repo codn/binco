@@ -5,10 +5,17 @@
 @import "datepicker";
 
 .field_with_errors {
+<<<<<<< HEAD
   @extend .is-invalid;
 
   input, select {
     @extend .form-control-danger;
+=======
+  @extend .has-error;
+
+  .form-control {
+    border-width: 1px;
+>>>>>>> turbolinks-5
   }
 }
 
