@@ -1,3 +1,4 @@
+//= require binco_namespace
 //= require bootstrap-sprockets
 //= require select2
 //= require bootstrap-datepicker/core
