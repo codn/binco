@@ -13,7 +13,7 @@ module Binco
     def initialize(object_name, object, template, options)
       ActionView::Base::field_error_proc = Proc.new do |html_tag, instance|
         if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
-          error_messages = instance.error_message.collect{ |error| "<div class=\"form-control-feedback\">#{error}</div>" }.join
+          error_messages = instance.error_message.collect{ |error| "<div class=\"invalid-feedback\">#{error}</div>" }.join
 
           "<div class=\"field_with_errors\">#{html_tag} #{error_messages}</div>".html_safe
         else
