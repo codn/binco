@@ -1,3 +1,4 @@
+//= require jquery
 //= require binco_namespace
 //= require popper
 //= require bootstrap-sprockets
