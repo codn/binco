@@ -1,13 +1,41 @@
-@import "bootstrap-sprockets";
+@import "bootstrap_variables";
 @import "bootstrap";
 @import "select2";
 @import "select2-bootstrap";
-@import "bootstrap-datepicker3";
+@import "datepicker";
 
 .field_with_errors {
-  @extend .has-error;
-
-  .form-control {
-    border-width: 1px;
+  input, select {
+    @extend .is-invalid;
+    @extend .was-validated;
   }
+}
+
+.form-group > .field_with_errors {
+  display: inline;
+}
+
+.form-group > .field_with_errors:last-child {
+  display: block;
+}
+
+select.custom-select {
+  width: 100%;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.field_with_errors .select2-container .select2-selection--single {
+  border-color: $form-feedback-invalid-color;
+}
+
+.field_with_errors .custom-select {
+  border-color: $form-feedback-invalid-color;
+}
+
+.pagination {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
