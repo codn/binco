@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    binco (0.0.3)
-      bootstrap (>= 4.0.0.beta)
-      bootstrap-datepicker-rails (>= 1.6.0)
+    binco (3.0.0)
+      bootstrap (= 4.0.0.beta)
+      bootstrap-datepicker-rails (~> 1.6, >= 1.6.0)
       jquery-rails (= 4.3.1)
       railties (>= 3.2, < 5.2.x)
-      select2-rails
-      will_paginate
+      select2-rails (~> 4.0)
+      will_paginate (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -107,9 +107,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
+  activesupport (~> 5.0)
   binco!
-  sass-rails
+  sass-rails (~> 5.0)
 
 BUNDLED WITH
    1.14.3
