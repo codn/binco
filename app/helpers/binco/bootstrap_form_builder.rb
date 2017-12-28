@@ -10,16 +10,18 @@ module Binco
     FORM_ELEMENT_CLASS = 'form-control'
     CHECK_BOX_INPUT_CLASS = 'form-check-input'
 
-    def initialize(object_name, object, template, options)
-      ActionView::Base::field_error_proc = Proc.new do |html_tag, instance|
-        if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
-          error_messages = instance.error_message.collect{ |error| "<div class=\"invalid-feedback\">#{error}</div>" }.join
+    ERROR_PROC = Proc.new do |html_tag, instance|
+      if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
+        error_messages = instance.error_message.collect{ |error| "<div class=\"invalid-feedback\">#{error}</div>" }.join
 
-          "<div class=\"field_with_errors\">#{html_tag} #{error_messages}</div>".html_safe
-        else
-          "<div class=\"field_with_errors\">#{html_tag}</div>".html_safe
-        end
+        "<div class=\"field_with_errors\">#{html_tag} #{error_messages}</div>".html_safe
+      else
+        html_tag
       end
+    end
+
+    def initialize(object_name, object, template, options)
+      ActionView::Base::field_error_proc = ERROR_PROC
 
       super(object_name, object, template, options)
     end
