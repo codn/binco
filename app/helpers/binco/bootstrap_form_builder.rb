@@ -14,7 +14,9 @@ module Binco
       if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
         error_messages = instance.error_message.collect{ |error| "<div class=\"invalid-feedback\">#{error}</div>" }.join
 
-        "<div class=\"field_with_errors\">#{html_tag} #{error_messages}</div>".html_safe
+        Rails.logger.debug html_tag.inspect
+
+        "#{html_tag.gsub(/class="/, 'class="is-invalid ')} #{error_messages}".html_safe
       else
         html_tag
       end
