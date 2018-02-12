@@ -161,8 +161,17 @@ module Binco
     end
 
     def addon(icon, options = {})
-      options = add_class_to_options('input-group-addon', options)
-      @template.content_tag(:span, icon, options)
+      input_group_append(icon, options)
+    end
+
+    def input_group_prepend(content, options = {})
+      options = add_class_to_options('input-group-prepend', options)
+      @template.content_tag(:div, @template.content_tag(:span, content, { class: 'input-group-text' }), options)
+    end
+
+    def input_group_append(content, options = {})
+      options = add_class_to_options('input-group-append', options)
+      @template.content_tag(:div, @template.content_tag(:span, content, { class: 'input-group-text' }), options)
     end
 
     private
