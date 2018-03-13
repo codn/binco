@@ -1,7 +1,9 @@
 window.Binco.Select2 =
   load: (selector) ->
     selector = if typeof selector == 'string' then selector else '.select2-rails'
-    $(selector).select2()
+    $(selector).select2(
+      theme: "bootstrap"
+    )
   destroy: (selector) ->
     selector = if typeof selector == 'string' then selector else '.select2-rails'
     $(selector).each((i,e) ->
