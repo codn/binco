@@ -1,3 +1,3 @@
 module Binco
-  VERSION = '0.0.3'
+  VERSION = '2.0.1'
 end
