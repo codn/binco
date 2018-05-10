@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    binco (3.1.1)
-      bootstrap (= 4.0.0.beta3)
+    binco (3.1.6)
+      bootstrap (= 4.0.0)
       bootstrap-datepicker-rails (~> 1.6, >= 1.6.0)
       jquery-rails (= 4.3.1)
-      railties (>= 3.2, < 5.2.x)
+      railties (>= 3.2, <= 6)
       select2-rails (~> 4.0)
       will_paginate (~> 3.0)
 
@@ -30,13 +30,13 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (7.2.5)
+    autoprefixer-rails (8.4.1)
       execjs
-    bootstrap (4.0.0.beta3)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
+      popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
-    bootstrap-datepicker-rails (1.7.1.1)
+    bootstrap-datepicker-rails (1.8.0.1)
       railties (>= 3.0)
     builder (3.2.3)
     concurrent-ruby (1.0.5)
@@ -113,4 +113,4 @@ DEPENDENCIES
   sass-rails (~> 5.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
