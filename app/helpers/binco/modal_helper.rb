@@ -21,7 +21,7 @@ module Binco
           title = content_tag(:h4 , title, class: 'modal-title')
         end
 
-        "#{close}#{title}".html_safe
+        "#{title}#{close}".html_safe
       end
     end
 
