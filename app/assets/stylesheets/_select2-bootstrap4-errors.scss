@@ -1,0 +1,8 @@
+select.is-invalid + .select2-container--bootstrap {
+  border: 1px solid $red;
+  border-radius: $border-radius;
+
+  & + .invalid-feedback {
+    display: block;
+  }
+}
