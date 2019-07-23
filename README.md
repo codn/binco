@@ -5,7 +5,7 @@ This is a wrapper for adding bootstrap to a project. By includinig this gem you'
 * [Bootstrap](https://github.com/twbs/bootstrap-sass)
 * [Bootstrap Datepicker](https://github.com/Nerian/bootstrap-datepicker-rails)
 * [Select2](https://github.com/argerim/select2-rails)
-* [Will paginate](https://github.com/mislav/will_paginate)
+* [Will paginate](https://github.com/mislav/will_paginate) (Optional)
 * Links with `data: { confirm: 'Sure?' }` opens in Bootstrap Modal by default.
 * Bootstrap Helpers
 
@@ -116,7 +116,7 @@ end
 
 ### Pagination
 
-## Will Paginate
+#### Will Paginate
 
 Add Will Paginate to your Gemfile
 
