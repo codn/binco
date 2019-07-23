@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails", '4.3.1'
 
   s.add_dependency "select2-rails", '~> 4.0'
-  s.add_dependency "will_paginate", '~> 3.0'
   s.add_dependency "bootstrap-datepicker-rails", '~> 1.6', '>= 1.6.0'
 
   s.add_development_dependency "activesupport", '~> 5.0'

@@ -5,6 +5,7 @@ module Binco
     ELLIPSIS = '&hellip;'
 
     def to_html
+      caca
       list_items = pagination.map do |item|
         case item
           when Fixnum

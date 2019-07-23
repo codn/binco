@@ -115,6 +115,15 @@ end
 ```
 
 ### Pagination
+
+## Will Paginate
+
+Add Will Paginate to your Gemfile
+
+```
+gem "will_paginate", '~> 3.0'
+```
+
 ```ruby
 # controller
 @posts = Post.all.page(params[:page])
