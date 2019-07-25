@@ -3,6 +3,7 @@ window.Binco.Select2 =
     selector = if typeof selector == 'string' then selector else '.select2-rails'
     $(selector).select2(
       theme: "bootstrap"
+      tags: $(@).data('tags')
     )
   destroy: (selector) ->
     selector = if typeof selector == 'string' then selector else '.select2-rails'
