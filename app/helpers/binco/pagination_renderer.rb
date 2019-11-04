@@ -63,4 +63,9 @@ if defined?(::WillPaginate)
       end
     end
   end
+else
+  module Binco
+    class PaginationRenderer
+    end
+  end
 end

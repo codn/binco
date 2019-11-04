@@ -11,7 +11,7 @@ module Binco
     CHECK_BOX_INPUT_CLASS = 'form-check-input'
 
     ERROR_PROC = Proc.new do |html_tag, instance|
-      if instance.respond_to?(:error_message) && instance.class.to_s != 'ActionView::Helpers::Tags::Label'
+      if instance.class.to_s != 'ActionView::Helpers::Tags::Label'
         error_messages = instance.error_message.collect{ |error| "<div class=\"invalid-feedback\">#{error}</div>" }.join
 
         "#{html_tag.gsub(/class="/, 'class="is-invalid ')} #{error_messages}".html_safe
