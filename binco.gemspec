@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_paths = ['lib']
 
-  s.add_dependency "railties", ">= 3.2", "<= 6"
+  s.add_dependency "railties", ">= 3.2", "<= 7"
 
   s.add_dependency "bootstrap", '~> 4.3'
-  s.add_dependency "jquery-rails", '4.3.1'
+  s.add_dependency "jquery-rails", '>= 4.3.0'
 
   s.add_dependency "select2-rails", '~> 4.0'
   s.add_dependency "bootstrap-datepicker-rails", '~> 1.6', '>= 1.6.0'
