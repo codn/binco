@@ -11,20 +11,16 @@ Gem::Specification.new do |s|
   s.email       = ["victor@codn.mx"]
   s.homepage    = "http://github.com/codn/binco"
   s.summary     = "Bootstrap Sass for use in Ruby on Rails applications"
-  s.description = "This Gems wraps the bootstrap-sass gem and adds a collection of helpers to help you integrate bootstrap into your Rails app."
+  s.description = "This Gems wraps adds a collection of helpers to help you integrate bootstrap into your Rails app."
   s.license     = "MIT"
 
   s.files = Dir["{app,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
   s.require_paths = ['lib']
 
-  s.add_dependency "railties", ">= 3.2", "<= 6"
+  s.add_dependency "railties", "~> 6.0"
 
-  s.add_dependency "bootstrap", '~> 4.3'
   s.add_dependency "jquery-rails", '4.3.1'
-
-  s.add_dependency "select2-rails", '~> 4.0'
-  s.add_dependency "bootstrap-datepicker-rails", '~> 1.6', '>= 1.6.0'
 
   s.add_development_dependency "activesupport", '~> 5.0'
   s.add_development_dependency "sass-rails", '~> 5.0'

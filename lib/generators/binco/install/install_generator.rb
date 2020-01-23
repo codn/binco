@@ -17,10 +17,10 @@ module Binco
     end
 
     def add_javascripts
-      inject_into_file 'app/assets/javascripts/application.js', after: '//= require turbolinks' do
-        "\n//= require binco\n" +
-        "//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js\n" +
-        "//= require select2_locale_es"
+      inject_into_file 'app/javascript/packs/application.js', after: 'require("channels")' do
+        "\nimport $ from 'jquery'\n" +
+        "require('select2')\n" +
+        "require('bootstrap-datepicker')"
       end
     end
   end

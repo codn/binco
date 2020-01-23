@@ -1,7 +1,4 @@
 require 'jquery-rails'
-require 'bootstrap'
-require 'select2-rails'
-require 'bootstrap-datepicker-rails'
 
 module Binco
   class Engine < ::Rails::Engine

@@ -1,10 +1,10 @@
 # Binco
 
-This is a wrapper for adding bootstrap to a project. By includinig this gem you'll add:
+This is a wrapper for adding bootstrap to your Rails 6 projects. By includinig this gem you'll add a series of helpers that work with the bootstrap CSS framework:
 
-* [Bootstrap](https://github.com/twbs/bootstrap-sass)
-* [Bootstrap Datepicker](https://github.com/Nerian/bootstrap-datepicker-rails)
-* [Select2](https://github.com/argerim/select2-rails)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [Bootstrap Datepicker](https://github.com/uxsolutions/bootstrap-datepicker)
+* [Select2](https://github.com/select2/select2)
 * [Will paginate](https://github.com/mislav/will_paginate) (Optional)
 * Links with `data: { confirm: 'Sure?' }` opens in Bootstrap Modal by default.
 * Bootstrap Helpers
@@ -21,31 +21,64 @@ and run:
 ```
 bundle install
 ```
+
+then add our css/js dependencies using yarn
+
+```
+ yarn add bootstrap select2 bootstrap-datepicker
+```
+
 ### Automatic
 Run `rails g binco:install`
 
-This creates the `application.scss` with binco (and bootstrap) included, your `_bootstrap-overrides.scss` file and insert assets into javascript manifest.
+This creates the `application.scss` with binco (and bootstrap) included, your `_bootstrap-overrides.scss`.
 
 ### Manual Installation
 In your application.scss add:
 ```
-@include "binco"
+// Install bootstrap using yarn
+// $ yarn add bootstrap
+@import "bootstrap_variables";
+@import "bootstrap/scss/bootstrap";
+
+// Install select2 with yarn
+// $ yarn add select2
+// @import "select2/dist/css/select2";
+
+@import "binco";
 ```
+
+And uncomment the select2 part if you wish to use it.
 
 In your application.js add:
 ```
-//= require binco
+require("bootstrap")
+
+// Uncomment this lines if you are going to use select2 and/or bootstrap datepicker
+// import $ from 'jquery'
+// require('select2')
+// require("bootstrap-datepicker")
 ```
 
 #### Optional
 For customization of datepicker make sure to include your locale js and send it as data attribute when creating a datepicker.
 ```
-# app/assets/javascripts/application.js
+# app/javascripts/packs/application.js
 
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require select2_locale_es
+$.fn.datepicker.dates['es'] = {
+	days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+	daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+	daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+	months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+	monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+	today: "Hoy",
+	monthsTitle: "Meses",
+	clear: "Borrar",
+	weekStart: 1,
+	format: "yyyy-mm-dd"
+};
 
-$.fn.datepicker.defaults.language = 'es'
+$.fn.datepicker.defaults.language = "es"
 ```
 
 ## Usage
