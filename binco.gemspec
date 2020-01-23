@@ -18,9 +18,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_paths = ['lib']
 
-  s.add_dependency "railties", "~> 6.0"
+  s.add_dependency "railties", ">= 3.2", "<= 7"
 
-  s.add_dependency "jquery-rails", '4.3.1'
+  s.add_dependency "jquery-rails", '>= 4.3.1'
 
   s.add_development_dependency "activesupport", '~> 5.0'
   s.add_development_dependency "sass-rails", '~> 5.0'
